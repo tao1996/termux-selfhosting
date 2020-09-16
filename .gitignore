@@ -1,0 +1,10 @@
+jni/bootstrap-*.zip
+out/*
+src/androidx/core/R.java
+src/androidx/drawerlayout/R.java
+src/com/termux/Manifest.java
+src/com/termux/R.java
+*.apk
+*.class
+*.d
+*.so
