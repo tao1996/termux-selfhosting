@@ -31,12 +31,6 @@ mkdir -p out/lib/${LIBDIR}
 
 cd ./jni
 
-if [ ! -f "bootstrap-${TERMUX_ARCH}.zip" ]; then
-	rm -f bootstrap-${TERMUX_ARCH}.zip.tmp
-	curl --fail --retry 3 --location --output bootstrap-${TERMUX_ARCH}.zip.tmp \
-		https://bintray.com/termux/bootstrap/download_file?file_path=bootstrap-${TERMUX_ARCH}-v28.zip
-	mv bootstrap-${TERMUX_ARCH}.zip.tmp bootstrap-${TERMUX_ARCH}.zip
-fi
 
 echo "Compiling native libraries..."
 clang -Os -shared -o ../out/lib/${LIBDIR}/libtermux-bootstrap.so termux-bootstrap.c termux-bootstrap-zip.S
